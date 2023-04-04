@@ -3,21 +3,22 @@ const itemsArray = localStorage.getItem("tasks")
   : [];
 
 console.log(itemsArray);
+console.log(itemsArray[1]);
 
 window.addEventListener("load", () => {
   displayItems();
 
   const form = document.querySelector("#new-task-form");
-  const input = document.querySelector("#new-task-input");
 
   form.addEventListener("submit", (e) => {
     const task = document.querySelector("#new-task-input");
-    const taskVal = input.value;
+    const taskVal = task.value;
     if (taskVal === "") {
       alert("Please add some task!");
       return false;
+    } else {
+      createItem(task);
     }
-    createItem(task);
   });
 
   function createItem(task) {
@@ -30,10 +31,10 @@ window.addEventListener("load", () => {
     for (let i = 0; i < itemsArray.length; i++) {
       tasks += `<div class="task">
                   <div class="content">
-                    <input type="text" class="text" value=${itemsArray[i]} />
+                    <input type="text" class="text" value="${itemsArray[i]}" />
                   </div>
                   <div class="actions">
-                    <button class="edit">Update</button>
+                    <button class="edit">Edit</button>
                     <button class="delete">Delete</button>
                   </div>
                 </div>`;
@@ -46,8 +47,13 @@ window.addEventListener("load", () => {
       const editBtn = document.querySelectorAll(".edit");
       const inputs = document.querySelectorAll(".text");
       editBtn.forEach((sB, i) => {
-        sB.addEventListener("click", () => {
-          updateItem(inputs[i].value, i);
+        sB.addEventListener("click", (e) => {
+          if (e.target.innerHTML.toLowerCase() == "edit") {
+            e.target.innerHTML = "Save";
+            updateItem(inputs[i].value, i);
+          } else {
+            e.target.innerHTML = "Edit";
+          }
         });
       });
     }
