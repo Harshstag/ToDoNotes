@@ -163,3 +163,10 @@ h3 {
 .task .actions .delete {
   color: crimson;
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.875rem; /* Reduce font size */
+    zoom: 0.85; /* Deliberately zoom out */
+  }
+}
