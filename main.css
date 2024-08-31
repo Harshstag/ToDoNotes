@@ -167,6 +167,6 @@ h3 {
 @media (max-width: 600px) {
   body {
     font-size: 0.75rem; /* Reduce font size */
-    zoom: 0.75; /* Deliberately zoom out */
+    zoom: 0.7; /* Deliberately zoom out */
   }
 }
