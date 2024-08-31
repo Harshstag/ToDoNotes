@@ -167,8 +167,8 @@ h3 {
 
 @media (max-width: 600px) {
   body {
-    font-size: 0.75rem; /* Reduce font size */
-    zoom: 0.75; 
+    font-size: 0.7rem; /* Reduce font size */
+    zoom: 0.7; 
     width: 100%;
 
   }
@@ -176,7 +176,7 @@ h3 {
   width: 100%;
   }
   #new-task-submit {
-  margin-right: 3rem;
+  margin-right: 4rem;
   }
   #tasks .task {
   margin-right: 3rem;
